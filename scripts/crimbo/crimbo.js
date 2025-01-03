@@ -25024,9 +25024,9 @@ var Macro2 = /* @__PURE__ */ function(_StrictMacro) {
   }, {
     key: "waffle",
     value: function(island) {
-      return args.waffles ? this.while_("hascombatitem waffle && ".concat(island.avoidMonsters.map(function(m) {
+      return args.waffles ? this.while_("hascombatitem waffle && (".concat(island.avoidMonsters.map(function(m) {
         return "monsterid ".concat(m.id);
-      }).join(" || ")), Macro3.tKey().tearawayPants().item(import_kolmafia96.Item.get("waffle"))) : this;
+      }).join(" || "), ")"), Macro3.tKey().tearawayPants().item(import_kolmafia96.Item.get("waffle"))) : this;
     }
   }, {
     key: "islandKillWith",
