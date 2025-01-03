@@ -25054,7 +25054,9 @@ var Macro2 = /* @__PURE__ */ function(_StrictMacro) {
   }, {
     key: "islandRunWith",
     value: function(island, thing) {
-      return this.pickpocket().tKey().trySkill($skill(_templateObject4513 || (_templateObject4513 = _taggedTemplateLiteral88(["Launch spikolodon spikes"])))).tearawayPants().ifNot(island.orbTarget, new Macro3().itemOrSkill(thing)).attack().repeat("!pastround 3").hardCombat();
+      return this.pickpocket().tKey().trySkill($skill(_templateObject4513 || (_templateObject4513 = _taggedTemplateLiteral88(["Launch spikolodon spikes"])))).tearawayPants().if_("".concat(island.avoidMonsters.map(function(m) {
+        return "monsterid ".concat(m.id);
+      }).join(" || ")), new Macro3().itemOrSkill(thing)).attack().repeat("!pastround 3").hardCombat();
     }
   }], [{
     key: "tryHaveSkill",
