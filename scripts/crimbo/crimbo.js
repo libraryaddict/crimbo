@@ -23997,6 +23997,10 @@ var args = Args.create("crimbo24", "A script for farming elf stuff", {
     help: "Should this script try to waffle away every single monster as long as it has waffles, except the rare dropping ones? Caution, this will rapidly drain your inventory of waffles!",
     default: !1
   }),
+  freeruns: Args.boolean({
+    help: "Should the script try to freerun with GAP / Navel Gazing Ring if the monster isn't one of the rare droppers? This means you will receive less Spirits",
+    default: !1
+  }),
   debug: Args.flag({
     help: "Turn on debug printing",
     default: !1
@@ -25036,7 +25040,7 @@ var Macro2 = /* @__PURE__ */ function(_StrictMacro) {
   }, {
     key: "gapRunIfUnwantedMonster",
     value: function(island) {
-      return this.externalIf($items(_templateObject4215 || (_templateObject4215 = _taggedTemplateLiteral88(["Greatest American Pants, navel ring of navel gazing"]))).some(function(item14) {
+      return this.externalIf(args.freeruns && $items(_templateObject4215 || (_templateObject4215 = _taggedTemplateLiteral88(["Greatest American Pants, navel ring of navel gazing"]))).some(function(item14) {
         return (0, import_kolmafia96.haveEquipped)(item14);
       }), Macro3.if_("".concat(island.avoidMonsters.map(function(m) {
         return "monsterid ".concat(m.id);
@@ -25405,7 +25409,7 @@ function islandOutfit(fight) {
         var phylum = _ref8.phylum;
         return phylum === $phylum(_templateObject5512 || (_templateObject5512 = _taggedTemplateLiteral89(["plant"])));
       }) && outfit2.equip($item(_templateObject5611 || (_templateObject5611 = _taggedTemplateLiteral89(["tearaway pants"]))));
-  return fight === "regular" && !(args.waffles && (0, import_kolmafia98.itemAmount)($item(_templateObject5711 || (_templateObject5711 = _taggedTemplateLiteral89(["waffle"]))))) && (!outfit2.haveEquipped($item(_templateObject5810 || (_templateObject5810 = _taggedTemplateLiteral89(["tearaway pants"])))) && have($item(_templateObject5910 || (_templateObject5910 = _taggedTemplateLiteral89(["Greatest American Pants"])))) ? outfit2.equip($item(_templateObject606 || (_templateObject606 = _taggedTemplateLiteral89(["Greatest American Pants"])))) : outfit2.equips.has($slot(_templateObject6112 || (_templateObject6112 = _taggedTemplateLiteral89(["acc2"])))) || outfit2.equip(ifHave("acc2", $item(_templateObject6211 || (_templateObject6211 = _taggedTemplateLiteral89(["navel ring of navel gazing"])))))), outfit2.modifier = ["200 ".concat(island.element, " resistance 40 max"), "-100 combat -35 min", "-tie"], $familiars(_templateObject6311 || (_templateObject6311 = _taggedTemplateLiteral89(["Peace Turkey, Temporal Riftlet, Reagnimated Gnome"]))) ? outfit2.modifier.push("1 Familiar Weight") : outfit2.equip(ifHave("famequip", $item(_templateObject6411 || (_templateObject6411 = _taggedTemplateLiteral89(["tiny stillsuit"]))))), outfit2;
+  return args.freeruns && fight === "regular" && !(args.waffles && (0, import_kolmafia98.itemAmount)($item(_templateObject5711 || (_templateObject5711 = _taggedTemplateLiteral89(["waffle"]))))) && (!outfit2.haveEquipped($item(_templateObject5810 || (_templateObject5810 = _taggedTemplateLiteral89(["tearaway pants"])))) && have($item(_templateObject5910 || (_templateObject5910 = _taggedTemplateLiteral89(["Greatest American Pants"])))) ? outfit2.equip($item(_templateObject606 || (_templateObject606 = _taggedTemplateLiteral89(["Greatest American Pants"])))) : outfit2.equips.has($slot(_templateObject6112 || (_templateObject6112 = _taggedTemplateLiteral89(["acc2"])))) || outfit2.equip(ifHave("acc2", $item(_templateObject6211 || (_templateObject6211 = _taggedTemplateLiteral89(["navel ring of navel gazing"])))))), outfit2.modifier = ["200 ".concat(island.element, " resistance 40 max"), "-100 combat -35 min", "-tie"], $familiars(_templateObject6311 || (_templateObject6311 = _taggedTemplateLiteral89(["Peace Turkey, Temporal Riftlet, Reagnimated Gnome"]))) ? outfit2.modifier.push("1 Familiar Weight") : outfit2.equip(ifHave("famequip", $item(_templateObject6411 || (_templateObject6411 = _taggedTemplateLiteral89(["tiny stillsuit"]))))), outfit2;
 }
 
 // src/tasks/global.ts
