@@ -25049,8 +25049,8 @@ var Macro2 = /* @__PURE__ */ function(_StrictMacro) {
     }
   }, {
     key: "islandRunWith",
-    value: function(thing) {
-      return this.pickpocket().tKey().trySkill($skill(_templateObject4513 || (_templateObject4513 = _taggedTemplateLiteral88(["Launch spikolodon spikes"])))).tearawayPants().itemOrSkill(thing);
+    value: function(island, thing) {
+      return this.pickpocket().tKey().trySkill($skill(_templateObject4513 || (_templateObject4513 = _taggedTemplateLiteral88(["Launch spikolodon spikes"])))).tearawayPants().ifNot(island.orbTarget, new Macro3().itemOrSkill(thing)).attack().repeat("!pastround 3").hardCombat();
     }
   }], [{
     key: "tryHaveSkill",
@@ -25124,8 +25124,8 @@ var Macro2 = /* @__PURE__ */ function(_StrictMacro) {
     }
   }, {
     key: "islandRunWith",
-    value: function(thing) {
-      return new Macro3().islandRunWith(thing);
+    value: function(island, thing) {
+      return new Macro3().islandRunWith(island, thing);
     }
   }, {
     key: "islandCombat",
@@ -25641,7 +25641,7 @@ function freeRunTask(fragment, action) {
       return islandOutfit("freerun", source);
     },
     combat: new CrimboStrategy(function() {
-      return Macro2.islandRunWith(action);
+      return Macro2.islandRunWith(getIsland(), action);
     })
   }, fragment);
 }
