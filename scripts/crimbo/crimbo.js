@@ -25028,7 +25028,7 @@ var Macro2 = /* @__PURE__ */ function(_StrictMacro) {
   }, {
     key: "waffle",
     value: function(island) {
-      return args.waffles ? this.while_("hascombatitem waffle && !(".concat(Macro3.makeBALLSPredicate(island.avoidMonsters), ")"), Macro3.tKey().tearawayPants().item($item(_templateObject4215 || (_templateObject4215 = _taggedTemplateLiteral88(["waffle"]))))) : this;
+      return args.waffles ? this.while_("hascombatitem waffle && (".concat(Macro3.makeBALLSPredicate(island.avoidMonsters), ")"), Macro3.tKey().tearawayPants().item($item(_templateObject4215 || (_templateObject4215 = _taggedTemplateLiteral88(["waffle"]))))) : this;
     }
   }, {
     key: "islandKillWith",
